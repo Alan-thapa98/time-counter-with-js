@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon java projsect</title>
+</head>
+
+<body>
+
+
+    <h1>New Year Eve </h1>
+    <div class="conuntdown-container">
+        <div class="conuntdown-ol days-c">
+            <p class="big-text" id="days">0</p>
+            <span>Days</span>
+        </div>
+        <div class="conuntdown-ol days-c">
+            <p class="big-text" id="hours">0</p>
+            <span>Hours</span>
+        </div>
+        <div class="conuntdown-ol days-c">
+            <p class="big-text" id="mins">0</p>
+            <span>Minutes</span>
+        </div>
+        <div class="conuntdown-ol days-c">
+            <p class="big-text" id="seconds">0</p>
+            <span>Seconds</span>
+        </div>
+    </div>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            color: aliceblue;
+            margin: 0;
+            background-image: url(./pic/zombi.png);
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            margin: 0;
+
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 10rem;
+            color: black;
+        }
+
+        .conuntdown-container {
+            display: flex;
+            text-shadow: 0.1px 1.5px black;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .big-text {
+            font-size: 6rem;
+            line-height: 1;
+            margin: 0 2rem;
+        }
+
+        .conuntdown-ol {
+            text-align: center;
+
+
+        }
+        
+
+        .conuntdown-ol span {
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <script>
+        daysE1 = document.getElementById('days');
+        hoursE1 = document.getElementById('hours');
+        minutesE1 = document.getElementById('mins');
+        secondsE1 = document.getElementById('seconds');
+
+        newYears = "1 jan 2022 ";
+
+        function countdown() {
+            newYears = new Date(newYears);
+            currentDate = new Date();
+            totalseconds = (newYears - currentDate) / 1000;
+            days = Math.floor(totalseconds / 3600 / 24);
+            hours = Math.floor(totalseconds / 3600) % 24;
+            mins = Math.floor(totalseconds / 60) % 60;
+            seconds = Math.floor(totalseconds) % 60;
+            daysE1.innerHTML = days;
+            hoursE1.innerHTML = hours;
+            minutesE1.innerHTML = mins;
+            secondsE1.innerHTML = seconds;
+
+
+        }
+
+        // function formatetime(time) {
+        //     return time < 10 ? 0 $(time) : time;
+
+        // }
+
+        // instial count
+        countdown();
+        setInterval(countdown, 1000);
+    </script>
+
+
+
+</body>
+
+</html>
